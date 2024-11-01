@@ -1,0 +1,235 @@
+/* Container chính chứa toàn bộ nội dung */
+.container {
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+/* Bố cục cho phần bên trái chứa tất cả các mục 'item' */
+.left {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 60%;
+    overflow-y: auto;
+}
+
+/* Mỗi 'item' sẽ được hiển thị toàn bộ trong cột bên trái */
+.item {
+    margin-bottom: 20px;
+}
+
+/* Bố cục cho phần bên phải chứa thông tin chi tiết */
+.item-right {
+    flex: 1;
+    max-width: 35%;
+    padding-right: 25px;
+    margin-right: 25px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 50px;
+    right: 0;
+    height: calc(100vh - 100px);
+}
+
+/* Điều chỉnh hình ảnh chính */
+.main-image img {
+    width: 100%;
+    max-height: 439px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* CSS cho mũi tên */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+}
+
+.left-arrow { left: 10px; }
+.right-arrow { right: 10px; }
+
+.main-image {
+    position: relative;
+}
+
+/* Bố cục cho ảnh nhỏ */
+.thumbnail-images {
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+/* Điều chỉnh bố cục và kích thước SVG trong thông tin xe */
+.my-svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.car-info {
+    font-size: 20px;
+    border: 1px solid #d3d0d0e4;
+    color: #31406f;
+    margin: 15px 0;
+    border-radius: 15px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    position: sticky;
+    top: 20px;
+}
+
+.car-info div {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.price-large {
+    font-size: 40px;
+    color: #EF4C49;
+    text-align: right;
+}
+
+.font-semibold {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.description-container, .parameter-container {
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.toggle-parameter, .toggle-btn {
+    font-size: 20px;
+    display: block;
+    padding: 8px 16px;
+    width: 100%;
+    margin: 16px auto;
+    cursor: pointer;
+    background-color: #EDEFF5;
+    color: rgb(110, 159, 227);
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.toggle-parameter:hover, .toggle-btn:hover {
+    background-color: #bdd7f4;
+}
+
+.description, .parameter {
+    border-radius: 15px;
+    max-height: 200px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.description.expanded, .parameter.expanded {
+    max-height: 900px;
+}
+
+.car-info p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+span, strong { font-size: 15px; }
+h1 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 20px;
+    font-size: 25px;
+}
+h3 { font-size: 30px; }
+
+.overview {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.overview-item {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 1 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.overview-item strong { margin-right: 10px; }
+
+/* Responsive */
+@media (max-width: 600px) {
+    .overview-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 5px;
+    }
+
+    .left, .item-right {
+        max-width: 100%;
+    }
+
+    .thumbnail-images {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .thumbnail-images {
+        flex-wrap: wrap;
+    }
+
+    .thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+
+    .main-image img {
+        max-height: 300px;
+        object-fit: contain;
+    }
+
+    .car-info p {
+        font-size: 1rem;
+    }
+}
