@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi tiết xe</title>
-    <link rel="stylesheet" href="oto.css">
+    <link rel="stylesheet" href="/cardetail/oto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+    <header class=" shadow-lg">
+        <div class="top-head">
+            <!-- logo -->
+                <div class="logo ">
+                    <i class="fa-solid fa-car">SHOP car</i>
+                </div>
+            <!-- line search -->
+                <div class="search-bar">
+                  <form onsubmit="return validateSearch()" id="forminput">
+                    <input type="text" placeholder="Tìm kiếm..." id ="Search"  >
+                  </form>
+                </div>
+            <!-- button account -->
+                <div class="account">
+                  <a href="/account/taoweb.html"><i class="fa-solid fa-user shadow"></i></a>
+                </div>
+        </div>
+        <!-- nav-bar -->
+            <nav >
+                <ul >
+                    <li><a href="/homepage/homepage.html">trang chủ</a></li>
+                    <li><a href="/vehiclecatalog/vehicle.html">danh mục xe</a></li>
+                    <li><a href="">ưu đãi</a></li>
+                    <li><a href="/demonstration/introduction.html">giới thiệu</a></li>
+                </ul>
+            </nav>
+    </header>
     <section class="car-details">
         <div class="container">
             <div class="left">
@@ -77,29 +105,103 @@
                     <h2 id="car-title" style="text-align: center;"></h2>
                     <p><strong></strong> <span id="car-price" class="price-large"></span></p>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <strong><img src="images1/year.svg" class="my-svg" alt="Năm sản xuất"> Năm sản xuất:</strong>
+                        <strong><i class="fas fa-calendar-alt" style="font-size: 24px; color: #31406F;"></i> Năm sản xuất:</strong>
                         <span class="font-semibold" id="car-year"></span>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <strong><img src="images1/fuel.svg" class="my-svg" alt="Nhiên liệu"> Nhiên liệu:</strong>
+                        <strong><i class="fas fa-gas-pump" style="font-size: 24px; color: #31406F;"></i> Nhiên liệu:</strong>
                         <span class="font-semibold" id="car-power"></span>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <strong><img src="images1/mileage.svg" class="my-svg" alt="Số km"> Số km:</strong>
+                        <strong><i class="fas fa-road icon" style="font-size: 24px; color: #31406F;"></i> Số km:</strong>
                         <span class="font-semibold" id="car-km"></span>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <strong><img src="images1/seatCapacity.svg" class="my-svg" alt="Số chỗ ngồi"> Số chỗ ngồi:</strong>
+                        <strong><i class="fas fa-car-side" style="font-size: 24px; color: #31406F;"></i> Số chỗ ngồi:</strong>
                         <span class="font-semibold" id="car-seat"></span>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <strong><img src="images1/transmission.svg" class="my-svg" alt="Hộp số"> Hộp số:</strong>
+                        <strong><i class="fas fa-tools" style="font-size: 24px; color: #31406F;"></i> Hộp số:</strong>
                         <span class="font-semibold" id="car-hs"></span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <script src="oto.js"></script>
+    <footer>
+        <div class="footer-content">
+          <!-- Logo và thông tin mô tả -->
+          <div class="item1">
+            <a href="/">
+                <i class="fa-solid fa-car">SHOP car</i>
+            </a>
+            <p>Carshop - nền tảng hàng đầu trong lĩnh vực xe cũ tại Việt Nam. Cam kết mang đến cho khách hàng trải nghiệm hoàn toàn minh bạch, nhanh chóng và đáng tin cậy.</p> 
+          </div>
+        
+          <!-- Đăng ký nhận bản tin -->
+          <div class="item2">
+            <h2>Đăng ký nhận bản tin</h2>
+            <p>Nhận bản tin để không bỏ lỡ thông tin và khuyến mãi của Carmudi</p>
+            <div class="gmail">
+              <input name="email" placeholder="Nhập vào email của bạn">
+              <button>Gửi</button>
+            </div>
+            <!-- Danh sách liên kết -->
+            <div class="itemlink">
+              <div class="link1">
+                <div>
+                  <h2>Dịch vụ</h2>
+                </div>
+                <ul>
+                  <li><a href="#">Mua xe ô tô</a></li>
+                  <li><a href="#">Trở thành cộng tác viên</a></li>
+                  <li><a href="#">Báo giá cửa hàng</a></li>
+                </ul>
+              </div>
+        
+              <div class="link2">
+                <div>
+                  <h2>Hỗ trợ</h2>
+                </div>
+                <ul>
+                  <li><a href="#">Mua bảo hiểm ô tô</a></li>
+                  <li><a href="#">Trả góp mua xe</a></li>
+                  <li><a href="#">Câu hỏi thường gặp</a></li>
+                  <li><a href="#">Liên hệ</a></li>
+                </ul>
+              </div>
+        
+              <div class="link3">
+                <div>
+                  <h2>Về Carshop</h2>
+                </div>
+                <ul>
+                  <li><a href="#">Giới thiệu công ty</a></li>
+                  <li><a href="#">Tin tức</a></li>
+                  <li><a href="#">Chính sách quyền riêng tư</a></li>
+                  <li><a href="#">Điều khoản sử dụng</a></li>
+                  <li><a href="#">Cơ hội việc làm</a></li>
+                  <li><a href="#">Chứng nhận Carshop</a></li>
+                </ul>
+              </div>
+        
+              <div class="link4">
+                <div>
+                  <h2>Công ty thành viên</h2>
+                </div>
+                <ul>
+                  <li><a href="https://www.carmudi.vn/">Carmudi công ti bán lẻ ô tô cũ</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-end">
+          <p>CÔNG TY TNHH XE OTO. Hotline: 19001509 (Toàn quốc) Số ĐKKD: 0369852147</p>
+          <br>
+          <p>Địa chỉ: Số 2 Cầu Giấy, Quận Đống Đa, Thành Phố Hà Nội, Việt Nam. ©2023 by Car Classifieds Limited Liability Company.</p>
+        </div>
+      </footer>
+    <script src="/cardetail/oto.js"></script>
 </body>
 </html>

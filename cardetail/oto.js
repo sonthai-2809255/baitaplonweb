@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pt: "Đĩa thông gió",
             ps: "Đĩa đặc",
             images: [
-                "car1.jpg",
+                "images2/car1.jpg",
                 "images2/car2.jpg",
                 "images2/car3.jpg",
                 "images2/car4.jpg",
@@ -309,8 +309,8 @@ document.addEventListener('DOMContentLoaded', () => {
             pt: "Đĩa thông gió",
             ps: "Đĩa đặc",
             images: [
-                "images2/k7/c1.webp",
-                "images2/k7/c2.webp",
+                "images2/k7/c1.jpeg",
+                "images2/k7/c2.jpeg",
                 "images2/k7/c3.webp",
                 "images2/k7/c4.webp"
             ]
@@ -531,3 +531,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Gán sự kiện cho nút "Xem thêm" thông số
     document.getElementById('toggle-parameter').addEventListener('click', toggleParameter);
 });
+// thiết lập validate bỏ trống
+function validateSearch(){
+    const searchinput=document.getElementById('Search').value.trim();
+    if(searchinput ==="") {
+      alert("bạn chưa nhập thông tin");
+      return false;
+    }
+    return true;
+  }

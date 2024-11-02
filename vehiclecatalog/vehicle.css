@@ -134,30 +134,9 @@ img{
    background-color: #fff;
    margin-top: 20px;
    border-radius: 8px;
-   font-family: 'Playfair Display', serif;
+font-family: 'Playfair Display', serif;
 
  }
- .select{
-   flex: 1;
-   max-width: 150px;
- }
-
- .list-brand {
-   display: flex;
-   gap: 20px;
-   margin-top: 15px;
- }
-.select img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-  }
-  
-.select:hover img {
-      transform: scale(1.1);
-  }
   footer{
    background-color: #073f73;
    color: #f7f7f7;
@@ -237,16 +216,47 @@ ul{
 .footer-end{
    text-align: center;
 } 
-/* sửa ở đây*/
 .car-list {
    display: flex;
-   gap: 16px; /* Khoảng cách giữa các mục xe */
-   flex-wrap: wrap; /* Để các mục tự động xuống dòng nếu không đủ chỗ */
+   flex-wrap: wrap;
+   justify-content: space-between; /* Khoảng cách đều giữa các mục xe */
+   gap: 16px;
+   padding: 20px;
 }
 
 .car-item {
-   flex: 1 1 200px; /* Đặt độ rộng tối thiểu là 200px, có thể thay đổi theo ý muốn */
-   max-width: 250px; /* Giới hạn độ rộng tối đa */
-   text-align: center; /* Căn giữa nội dung bên trong */
-   margin: 80px;
+   flex: 1 1 calc(33.33% - 32px); /* Đảm bảo mỗi mục chiếm 1/3 hàng trừ đi khoảng cách */
+   max-width: 450px;
+   height: 320px;
+   text-align: center;
+   padding: 16px;
+   border: 1px solid #073f73;
+   border-radius: 15px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   transition: transform 0.2s;
+   margin-bottom: 20px; /* Thêm khoảng cách giữa các dòng */
+}
+
+.car-item:hover {
+   transform: scale(1.05);
+}
+
+.car-item img {
+   border-radius: 15px;
+   max-width: 100%;
+   height: 200px; /* Chiều cao cố định */
+   object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
+}
+/* Media query cho màn hình nhỏ */
+@media (max-width: 768px) { /* Thay đổi chiều rộng tối đa theo ý muốn */
+   .car-item {
+       flex: 1 1 calc(50% - 32px); /* Hai xe trên mỗi hàng */
+       height: 360px;
+   }
+}
+@media (max-width: 480px) {
+   .car-item {
+       flex: 1 1 calc(100% - 32px); /* Một xe một hàng */
+       height: 390px;
+   }
 }
